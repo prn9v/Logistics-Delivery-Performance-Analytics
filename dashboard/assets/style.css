@@ -1,0 +1,235 @@
+/* Dash Dashboard Styling - Dark Theme */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+body {
+    background-color: #0b0f19;
+    color: #f1f5f9;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Layout container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+    padding: 20px 40px;
+    border-bottom: 1px solid #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #a5b4fc, #818cf8, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.app-subtitle {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* Sidebar and Main Content grid */
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 25px;
+    gap: 25px;
+}
+
+/* Sidebar for filters */
+.sidebar {
+    width: 300px;
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #e2e8f0;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 8px;
+}
+
+.filter-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #9ca3af;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Main Dashboard content */
+.dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* KPI Row */
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.kpi-card {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border: 1px solid #374151;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    border-color: #4b5563;
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.kpi-card.total-orders::before { background: #3b82f6; }
+.kpi-card.avg-time::before { background: #10b981; }
+.kpi-card.delay-rate::before { background: #ef4444; }
+.kpi-card.cancel-rate::before { background: #f59e0b; }
+
+.kpi-value {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 10px 0 5px 0;
+    color: #ffffff;
+}
+
+.kpi-label {
+    font-size: 13px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Dashboard rows (Grid for charts) */
+.chart-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.chart-card {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #e2e8f0;
+}
+
+/* Heatmap full row */
+.chart-card-full {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* React Select Dropdown overrides for dark theme */
+.Select-control {
+    background-color: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    color: white !important;
+}
+
+.Select-menu-outer {
+    background-color: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    color: white !important;
+}
+
+.Select-value-label {
+    color: white !important;
+}
+
+.virtual-dropdown .Dropdown-control {
+    background-color: #1f2937;
+    color: white;
+    border: 1px solid #374151;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: auto;
+    }
+    .kpi-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .chart-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
